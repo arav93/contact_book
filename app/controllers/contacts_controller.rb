@@ -22,8 +22,7 @@ class ContactsController < ApplicationController
         @contact.update(contact_params)
         render :json => @contact 
         rescue ActiveRecord::RecordInvalid => invalid
-            render :json => {error: invalid.record.errors}
-           
+            render :json => {error: invalid.record.errors}       
     end
 
     def destroy
