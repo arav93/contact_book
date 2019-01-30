@@ -33,9 +33,9 @@ class ContactsController < ApplicationController
     def search
         case search_params[:search_type]
         when 'name'
-            contact = Contact.where(name: search_params[:value]).page(search_params[:page]).to_a
+            contact = Contact.where(name: search_params[:value]).page(search_params[:page])
         when 'email'
-            contact = Contact.where(email: search_params[:value]).page(search_params[:page]).to_a
+            contact = Contact.where(email: search_params[:value]).page(search_params[:page])
         end
         render :json => contact
     end
